@@ -1,5 +1,5 @@
 Name: http_router
-Version: 0.1
+Version: 0.1.1
 Synopsis: Simple http_router for co_http.
 Authors: Brecht Hoflack <brecht.hoflack@gmail.com>
 License: LGPL with OCaml linking exception
