@@ -18,5 +18,5 @@ depends: [
   "async"
   "cohttp"
   "re"
-  "oUnit" {test}
+  "ounit" {test}
 ]
