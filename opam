@@ -1,0 +1,23 @@
+opam-version: "1.2"
+name: "http_router"
+version: "0.1"
+maintainer: "Brecht Hoflack <brecht.hoflack@gmail.com>"
+authors: "Brecht Hoflack <brecht.hoflack@gmail.com>"
+homepage: "http://github.com/bhoflack/http_router"
+bug-reports: ""
+license: "MIT"
+dev-repo: "http://github.com/bhoflack/http_routery"
+build: [
+  ["./configure" "--prefix=%{prefix}%"]
+  [make]
+]
+install: [make "install"]
+remove: ["ocamlfind" "remove" "http-router"]
+depends: [
+  "ocamlfind" {build}
+  "async"
+  "cohttp.async"
+  "re"
+  "str"
+  "re.perl" {test}
+]

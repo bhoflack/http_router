@@ -1,0 +1,40 @@
+Name: http_router
+Version: 0.1
+Synopsis: Simple http_router for co_http.
+Authors: Brecht Hoflack <brecht.hoflack@gmail.com>
+License: LGPL with OCaml linking exception
+BuildTools: ocamlbuild
+
+Description: http_router is a router for http requests.  Requests can be coupled with handlers using a simple DSL.
+Homepage: http://github.com/bhoflack/http_router
+
+SourceRepository master
+  Type: git
+  Location: https://github.com/bhoflack/http_router.git
+  Branch: master
+  Browser: https://github.com/bhoflack/http_router
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Library http_router
+  Path:  lib
+  Modules: Http_router
+  Findlibname: http_router
+  BuildDepends: threads,async,cohttp.async,str,re
+
+Executable test_http_router
+  Path:           lib_test
+  MainIs:         test_http_router.ml
+  Build$:         flag(tests)
+  Custom:         true
+  CompiledObject: best
+  Install:        false
+  BuildDepends:   http_router,re.perl,oUnit
+
+Test test_http_router
+  Run$:             flag(tests)
+  TestTools:        test_http_router
+  Command:          $test_http_router
+  WorkingDirectory: lib_test
