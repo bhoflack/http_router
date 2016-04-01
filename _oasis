@@ -31,7 +31,7 @@ Executable test_http_router
   Custom:         true
   CompiledObject: best
   Install:        false
-  BuildDepends:   http_router,re.perl,oUnit
+  BuildDepends:   http_router,re.perl,ounit
 
 Test test_http_router
   Run$:             flag(tests)
