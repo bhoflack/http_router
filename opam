@@ -15,8 +15,9 @@ install: [make "install"]
 remove: ["ocamlfind" "remove" "http-router"]
 depends: [
   "ocamlfind" {build}
-  "async"
+  "async" {>= "113.24.00"}
   "cohttp"
   "re"
   "ounit" {test}
 ]
+available: [ocaml-version >= "4.01.0"]
