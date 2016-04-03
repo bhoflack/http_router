@@ -16,6 +16,7 @@ remove: ["ocamlfind" "remove" "http-router"]
 depends: [
   "ocamlfind" {build}
   "async" {>= "113.24.00"}
+  "async_ssl"
   "cohttp"
   "re"
   "ounit" {test}
