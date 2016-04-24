@@ -33,8 +33,23 @@ Executable test_http_router
   Install:        false
   BuildDepends:   http_router,re.perl,oUnit
 
+Executable test_monadic
+  Build$:         flag(tests)
+  Path:           lib_test
+  MainIs:         test_monadic.ml
+  Custom:         true
+  CompiledObject: best
+  Install:        false
+  BuildDepends:   http_router, oUnit
+
 Test test_http_router
   Run$:             flag(tests)
   TestTools:        test_http_router
   Command:          $test_http_router
+  WorkingDirectory: lib_test
+
+Test test_monadic
+  Run$:             flag(tests)
+  TestTools:        test_monadic
+  Command:          $test_monadic
   WorkingDirectory: lib_test

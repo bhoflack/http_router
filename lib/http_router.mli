@@ -37,7 +37,7 @@ module Route : sig
   end
 end
 
-module Monadic(M: Core_kernel.Monad.Basic) : sig
+module Make (M: Core_kernel.Monad.S) : sig
   type t
   type handler = Cohttp_async.Body.t
                  -> Cohttp.Request.t
