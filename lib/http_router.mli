@@ -37,6 +37,25 @@ module Route : sig
   end
 end
 
+module Make (M: Core_kernel.Monad.S) : sig
+  type t
+  type handler = Cohttp_async.Body.t
+                 -> Cohttp.Request.t
+                 -> Context.t
+                 -> Cohttp_async.Server.response M.t
+
+  val create : (Route.t * handler) list -> t
+  val run : t
+        -> Cohttp_async.Body.t
+        -> Cohttp.Request.t
+        -> Cohttp_async.Server.response M.t option
+
+  val find_handler : t
+        -> Cohttp.Code.meth
+        -> Uri.t
+        -> (handler * Context.t) option
+end
+
 type handler = Cohttp_async.Body.t
                -> Cohttp.Request.t
                -> Context.t

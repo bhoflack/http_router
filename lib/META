@@ -1,6 +1,6 @@
 # OASIS_START
-# DO NOT EDIT (digest: d73e545ec0a670296fbd4f5f5722a01e)
-version = "0.1.2"
+# DO NOT EDIT (digest: b10700369c1556974828e7658e932bef)
+version = "0.2.0"
 description = "Simple http_router for co_http."
 requires = "threads async cohttp.async str re"
 archive(byte) = "http_router.cma"
