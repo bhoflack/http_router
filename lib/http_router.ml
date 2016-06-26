@@ -58,7 +58,7 @@ module Make (M: Core_kernel.Monad.S) = struct
   type handler = Cohttp_async.Body.t
                  -> Cohttp.Request.t
                  -> Context.t
-                 -> Cohttp_async.Server.response Async_kernel.Deferred.t M.t
+                 -> Cohttp_async.Server.response M.t
 
   type t = (Route.t * handler) list
 
@@ -95,4 +95,4 @@ module Make (M: Core_kernel.Monad.S) = struct
     find_handler t (Cohttp.Request.meth req) (Cohttp.Request.uri req) >>| fun (h, ctx) -> h body req ctx
 end
 
-include Make (Core_kernel.Monad.Ident)
+include Make (Async_kernel.Deferred)

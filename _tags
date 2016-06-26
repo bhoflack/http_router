@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 7843a8ec1a27a4fe755814d7b27910d5)
+# DO NOT EDIT (digest: 33398e6cad483480aaa3a08c39d023b9)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -30,22 +30,13 @@ true: annot, bin_annot
 <lib_test/test_http_router.{native,byte}>: pkg_str
 <lib_test/test_http_router.{native,byte}>: pkg_threads
 <lib_test/test_http_router.{native,byte}>: use_http_router
-<lib_test/*.ml{,i,y}>: pkg_re.perl
-<lib_test/test_http_router.{native,byte}>: custom
-# Executable test_monadic
-<lib_test/test_monadic.{native,byte}>: pkg_async
-<lib_test/test_monadic.{native,byte}>: pkg_cohttp.async
-<lib_test/test_monadic.{native,byte}>: pkg_oUnit
-<lib_test/test_monadic.{native,byte}>: pkg_re
-<lib_test/test_monadic.{native,byte}>: pkg_str
-<lib_test/test_monadic.{native,byte}>: pkg_threads
-<lib_test/test_monadic.{native,byte}>: use_http_router
 <lib_test/*.ml{,i,y}>: pkg_async
 <lib_test/*.ml{,i,y}>: pkg_cohttp.async
 <lib_test/*.ml{,i,y}>: pkg_oUnit
 <lib_test/*.ml{,i,y}>: pkg_re
+<lib_test/*.ml{,i,y}>: pkg_re.perl
 <lib_test/*.ml{,i,y}>: pkg_str
 <lib_test/*.ml{,i,y}>: pkg_threads
 <lib_test/*.ml{,i,y}>: use_http_router
-<lib_test/test_monadic.{native,byte}>: custom
+<lib_test/test_http_router.{native,byte}>: custom
 # OASIS_STOP

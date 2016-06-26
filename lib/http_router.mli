@@ -42,13 +42,13 @@ module Make (M: Core_kernel.Monad.S) : sig
   type handler = Cohttp_async.Body.t
                  -> Cohttp.Request.t
                  -> Context.t
-                 -> Cohttp_async.Server.response Async_kernel.Deferred.t M.t
+                 -> Cohttp_async.Server.response M.t
 
   val create : (Route.t * handler) list -> t
   val run : t
         -> Cohttp_async.Body.t
         -> Cohttp.Request.t
-        -> Cohttp_async.Server.response Async_kernel.Deferred.t M.t option
+        -> Cohttp_async.Server.response M.t option
 
   val find_handler : t
         -> Cohttp.Code.meth
